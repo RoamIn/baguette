@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-jsdoc": "^0.1.5",
+    "gulp-jsdoc3": "^1.0.1"
+  }
+}
