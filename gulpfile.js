@@ -2,22 +2,16 @@
  * Created by ivill on 2017/3/28.
  */
 
-let gulp = require('gulp');
-let del = require('del');
+const gulp = require('gulp');
+const del = require('del');
+const test =require('./test.js');
 
-let concat = require('gulp-concat');
-let jsdoc = require('gulp-jsdoc3');
-
-gulp.task('test', function () {
-    return gulp.src('./src/*.js')
-        .pipe(concat('all.js'))
+gulp.task('test', function() {
+    return gulp.src('./input/*.js')
+        .pipe(test())
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('doc', function (cb) {
-    return gulp.src(['./src/*.js'], {read: false})
-        .pipe(jsdoc(cb));
-});
 
 gulp.task('output', () => {
     del([
@@ -26,9 +20,8 @@ gulp.task('output', () => {
 });
 
 gulp.task('default', [
-    'del'
+    'test'
 ]);
-
 
 
 

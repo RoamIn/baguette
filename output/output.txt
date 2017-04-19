@@ -1,0 +1,14 @@
+{
+	"Type": "GET",
+	"Request": {
+		"Id": 1
+	},
+	"Response": {
+		"Data": {
+			"Id": 1,
+			"Name": "Roam"
+		},
+		"Status": true,
+		"Message": "Success"
+	}
+}
