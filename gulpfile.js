@@ -4,12 +4,14 @@
 
 const gulp = require('gulp');
 const del = require('del');
-const test =require('./test.js');
+const esprima =require('./esprima.js');
 
-gulp.task('test', function() {
+const concat = require('gulp-concat');
+
+gulp.task('esprima', function() {
     return gulp.src('./input/*.js')
-        .pipe(test())
-        .pipe(gulp.dest('./dist/'));
+        .pipe(esprima())
+        .pipe(gulp.dest('./output/'));
 });
 
 
@@ -19,11 +21,6 @@ gulp.task('output', () => {
     ]);
 });
 
-gulp.task('default', [
-    'test'
-]);
-
-
 
 // clear old files
 gulp.task('clean', () => {
@@ -31,3 +28,16 @@ gulp.task('clean', () => {
         'output/*'
     ]);
 });
+
+gulp.task('scripts', function() {
+    return gulp.src('./input/*.js')
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('./dist/'));
+});
+
+
+gulp.task('default', [
+    'clean',
+    'esprima',
+    // 'scripts'
+]);
