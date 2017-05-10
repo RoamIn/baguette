@@ -22,8 +22,8 @@ module.exports = function (options) {
 
         // 解析 API 文件
         const data = esprima.parse(file.contents.toString(), {
-            attachComment: true,
-            sourceType: 'deduceSourceType'
+            comment: true,
+            loc: true
         });
 
         // 输出解析内容

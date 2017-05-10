@@ -1,12 +1,12 @@
-// API Example
+// 某页面接口
 module.exports({
     '/api/common/getList': {
         type: 'GET',
         request: {
             Id: '', // 空为不限
 
-            currPage: 1, // 当前页
-            pageLen: 10 // 每页数量
+            CurrPage: 1, // 当前页
+            PageLen: 10 // 每页数量
         },
         response: {
             TotalNum: 0, // 总数据条数
@@ -15,6 +15,7 @@ module.exports({
                     Id: 1,
                     Name: '炉石传说', // 名称
                     OS: 1, // 1-Android，2-iOS
+
                     UpdateTime: 1493630096904 // 更新时间，时间戳格式
                 }
             ],
